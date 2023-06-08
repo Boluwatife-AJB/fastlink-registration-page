@@ -31,3 +31,37 @@ passwordContainers.forEach((container) => {
 
   showPasswordIcon.addEventListener('click', showPassword);
 });
+
+const form = document.querySelector('.registration-form') as HTMLFormElement;
+const submitButton = document.querySelector(
+  'input[type=button]'
+) as HTMLInputElement;
+
+submitButton.addEventListener('click', () => {
+  const body = new FormData(form);
+  const requestOptions: RequestInit = {
+    method: 'POST',
+    body,
+  };
+
+  fetch('https://fastlink-mt6m.onrender.com/api/v1/auth/signup', requestOptions)
+    .then((response) => {
+      if (response.ok) {
+        // Success!
+        console.log('Successful💥💥');
+        return response.json(); // Parse response data as JSON
+      } else {
+        // Handle error
+        console.error('Network Error 🥲');
+        throw new Error('Network Error');
+      }
+    })
+    .then((data) => {
+      // Handle response data here
+      console.log('Response:', data);
+    })
+    .catch((error) => {
+      // Handle error
+      console.error('Error:', error);
+    });
+});

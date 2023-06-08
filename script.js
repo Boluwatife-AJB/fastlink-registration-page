@@ -23,3 +23,33 @@ passwordContainers.forEach(function (container) {
     });
     showPasswordIcon.addEventListener('click', showPassword);
 });
+var form = document.querySelector('.registration-form');
+var submitButton = document.querySelector('input[type=button]');
+submitButton.addEventListener('click', function () {
+    var body = new FormData(form);
+    var requestOptions = {
+        method: 'POST',
+        body: body,
+    };
+    fetch('https://fastlink-mt6m.onrender.com/api/v1/auth/signup', requestOptions)
+        .then(function (response) {
+        if (response.ok) {
+            // Success!
+            console.log('Successful💥💥');
+            return response.json(); // Parse response data as JSON
+        }
+        else {
+            // Handle error
+            console.error('Network Error 🥲');
+            throw new Error('Network Error');
+        }
+    })
+        .then(function (data) {
+        // Handle response data here
+        console.log('Response:', data);
+    })
+        .catch(function (error) {
+        // Handle error
+        console.error('Error:', error);
+    });
+});

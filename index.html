@@ -16,21 +16,23 @@
       <h2 class="title-text">Let&apos;s Get Started</h2>
       <!-- Create a post form -->
       <form action="" class="registration-form">
-        <label for="username">Username</label>
-        <input type="text" placeholder="Enter your username" />
+        <label for="First name">First Name</label>
+        <input type="text" placeholder="Enter your first name" name="name" />
+        <label for="Surname">Surname</label>
+        <input type="text" placeholder="Enter your Surname" name="surname" />
         <label for="email">Email Address</label>
-        <input type="email" placeholder="user@fastlink.com" />
+        <input type="email" placeholder="user@fastlink.com" name="email" />
         <label for="phone no">Phone No</label>
-        <input type="tel" placeholder="08012345678" />
-        <label for="hostel name">Hostel Name</label>
-        <input type="text" placeholder="Enter the name of your hostel" />
-        <label for="Referral Code"
-          >Referral Code <span class="optional">(optional)</span></label
-        >
-        <input type="text" placeholder="Enter Referral Code" />
+        <input type="tel" placeholder="08012345678" name="phone" />
+
         <label for="password">Password</label>
         <div class="password-container">
-          <input type="password" id="password" placeholder="Enter Password" />
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            name="password"
+          />
           <i class="ri-eye-off-line eye-icon show-password"></i>
         </div>
         <label for="username">Confirm Password</label>
@@ -49,7 +51,9 @@
 
       <p class="login-text">
         I have an account -
-        <a href="http://usefastlink.com" class="login-link">Log In</a>
+        <a href="https://wifi.usefastlink.com/login" class="login-link"
+          >Log In</a
+        >
       </p>
     </section>
   </body>
